@@ -21,7 +21,8 @@ Download: https://developer.hashicorp.com/terraform/install?ajs_aid=c91f7989-f34
 
 ## Iniciando...
 
-Vamos utilizar o arquivo `local.tf`, em que ele vai criar um resource de `local_file`.
+Vamos utilizar o arquivo `local.tf`, em que ele vai criar um provider `local`.
+Mais informações: https://registry.terraform.io/providers/hashicorp/local/latest/docs
 
 Para rodar o terraform, vamos utilizar o comando: `terraform init`.
 > Com isso, ele baixará o resource `local_file` do hashicorp e criará uma pasta oculta para salvar os dados baixados.
@@ -97,3 +98,30 @@ E assim como nas variáveis, podemos trabalhar com diversas formas de declarar a
 
 ---
 
+## Trabalhando com Data Sources
+
+São mecanismos que permitem que você **consulte informações externas** a sua infraestrutura, como por exemplo,
+dados de recursos já existentes em um provedor de nuvem.
+
+### Na prática:
+
+Na imagem abaixo, adicionamos o **item 1** (data source), que vai buscar as informações do provider `local_file` do arquivo `exemplo.txt`,
+e no **item 2**, mandamos imprimir o conteúdo buscado:
+![img_7.png](readme_images/img_7.png)
+
+Agora, ao executar o comando `terraform apply`, podemos ver o output **data-source-result** que o data source buscou:
+![img_8.png](readme_images/img_8.png)
+
+**Observações:**
+
+Dentro de **Provider** temos os `Resources`, que são os responsáveis por **criar e gerenciar** os recursos de infraestrutura.
+
+Já os `Data Sources`, são os responsáveis por **consultar informações** de recursos **já existentes**.
+
+Podemos trocar o output do data source para ele mostrar o valor no formato do **base64**:
+![img_9.png](readme_images/img_9.png)
+
+E podemos utilizar **filtros de busca** no data source:
+![img_10.png](readme_images/img_10.png)
+
+---
