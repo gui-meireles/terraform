@@ -40,3 +40,36 @@ O arquivo `terraform.tfstate`, armazena informações sobre os recursos criados,
 
 Já o arquivo `terraform.tfstate.backup`, é uma cópia de segurança do arquivo `terraform.tfstate`.
 
+---
+
+## Trabalhando com variáveis
+
+Trabalhar com variáveis no Terraform traz **diversos benefícios**, sendo eles:
+
+- Reutilização de código;
+- Flexibilidade;
+- Organização;
+- Segurança;
+- Facilidade de compartilhamento.
+
+### Na prática:
+
+No link a seguir, você pode encontrar diversas formas de declarar suas variáveis no Terraform:
+https://developer.hashicorp.com/terraform/language/values/variables
+
+No exemplo abaixo, utilizei o arquivo `terraform.tfvars` para setar o valor da variável `conteudo` do arquivo `local.tf`.
+![img_2.png](readme_images/img_2.png)
+
+E ao executar o comando: `terraform apply`, podemos ver que ele pegou o valor do arquivo `terraform.tfvars`:
+![img_3.png](readme_images/img_3.png)
+
+**Observações:**
+
+Quando o nome do arquivo é `terraform.tfvars`, ao executar o comando `terraform apply`, o terraform lê automaticamente
+as variáveis desse arquivo.
+
+Caso você tenha um nome de arquivo diferente, como por exemplo: `xpto.tfvars`, você deve executar o comando: 
+`terraform apply -var-file xpto.tfvars`.
+
+---
+

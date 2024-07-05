@@ -1,4 +1,6 @@
 resource "local_file" "exemplo" {
   filename = "exemplo.txt"
-  content = "Guilherme"
+  content = var.conteudo
 }
+
+variable "conteudo" {}
