@@ -4,3 +4,11 @@ resource "local_file" "exemplo" {
 }
 
 variable "conteudo" {}
+
+output "id-arquivo" {
+  value = resource.local_file.exemplo.id
+}
+
+output "conteudo" {
+  value = var.conteudo
+}

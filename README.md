@@ -73,3 +73,27 @@ Caso você tenha um nome de arquivo diferente, como por exemplo: `xpto.tfvars`, 
 
 ---
 
+## Trabalhando com output
+
+Os **outputs** no Terraform são utilizados para **expor informações** sobre a infraestrutura provisionada, permitindo
+que esses dados sejam utilizados por outros recursos ou até mesmo por usuários finais.
+
+Eles são úteis para fornecer informações relevantes **após a criação** ou **modificação** de recursos.
+
+### Na prática:
+
+No arquivo `local.tf` foi criado um output, para sempre que seu recurso for criado, printar o id do arquivo no log:
+![img_4.png](readme_images/img_4.png)
+
+Ao executar o comando de **apply**, podemos ver o **output** com o nome que criamos acima:
+![img_5.png](readme_images/img_5.png)
+
+Podemos adicionar mais outputs e sempre que aplicarmos as alterações, será mostrado no log:
+![img_6.png](readme_images/img_6.png)
+
+**Observações:**
+
+E assim como nas variáveis, podemos trabalhar com diversas formas de declarar as outputs, como tuplas, listas, entre outros.
+
+---
+
